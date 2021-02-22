@@ -78,9 +78,9 @@ function ApprovalNavigator() {
                 }
             }}
           >
-              <Stack.Screen name="Approval" component={Approval} options={{ title: 'Require Attention' }} />
-              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference Details' }}/>
-              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note Details' }}/>
+              <Stack.Screen name="Approval" component={Approval} options={{ title: 'Attention' }} />
+              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference' }}/>
+              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note' }}/>
           </Stack.Navigator>
   );
 }
@@ -120,9 +120,9 @@ function RecentNavigator() {
                 }
             }}
           >
-              <Stack.Screen name="Recent" component={Recent} options={{ title: 'Recent Changes' }}/>
-              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference Details' }}/>
-              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note Details' }}/>
+              <Stack.Screen name="Recent" component={Recent} options={{ title: 'Recent' }}/>
+              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference' }}/>
+              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note' }}/>
           </Stack.Navigator>
   );
 }
@@ -142,9 +142,9 @@ function ExpiringNavigator() {
                 }
             }}
           >
-              <Stack.Screen name="Expiring" component={Expiring} options={{ title: 'Expiring Soon' }}/>
-              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference Details' }}/>
-              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note Details' }}/>
+              <Stack.Screen name="Expiring" component={Expiring} options={{ title: 'Expiring' }}/>
+              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference' }}/>
+              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note' }}/>
           </Stack.Navigator>
   );
 }
@@ -165,10 +165,10 @@ function ViewerNavigator() {
             }}
           >
               <Stack.Screen name="ViewAll" component={ViewAll} options={{ title: 'Full Site' }} />
-              <Stack.Screen name="CategoryDetail" component={CategoryDetail} options={{ title: 'Site Category' }} />
-              <Stack.Screen name="PageDetail" component={PageDetail} options={{ title: 'Page Details' }}/>
-              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference Details' }}/>
-              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note Details' }}/>
+              <Stack.Screen name="CategoryDetail" component={CategoryDetail} options={{ title: 'Category' }} />
+              <Stack.Screen name="PageDetail" component={PageDetail} options={{ title: 'Page' }}/>
+              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference' }}/>
+              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note' }}/>
           </Stack.Navigator>
   );
 }
@@ -188,9 +188,9 @@ function DeletedNavigator() {
                 }
             }}
           >
-              <Stack.Screen name="Deleted" component={Deleted} options={{ title: 'Deleted Items' }}/>
-              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference Details' }}/>
-              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note Details' }}/>
+              <Stack.Screen name="Deleted" component={Deleted} options={{ title: 'Deleted' }}/>
+              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference' }}/>
+              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note' }}/>
           </Stack.Navigator>
   );
 }
@@ -231,9 +231,9 @@ function PagesNavigator() {
             }}
           >
               <Stack.Screen name="Pages" component={Pages} />
-              <Stack.Screen name="PageDetail" component={PageDetail} options={{ title: 'Page Details' }}/>
-              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference Details' }}/>
-              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note Details' }}/>
+              <Stack.Screen name="PageDetail" component={PageDetail} options={{ title: 'Page' }}/>
+              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference' }}/>
+              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note' }}/>
           </Stack.Navigator>
   );
 }
@@ -254,7 +254,7 @@ function NotesNavigator() {
             }}
           >
               <Stack.Screen name="Notes" component={Notes} />
-              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note Details' }}/>
+              <Stack.Screen name="NoteDetail" component={NoteDetail} options={{ title: 'Note' }}/>
           </Stack.Navigator>
   );
 }
@@ -275,7 +275,7 @@ function RefsNavigator() {
             }}
           >
               <Stack.Screen name="Refs" component={Refs} />
-              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'References Details' }}/>
+              <Stack.Screen name="RefDetail" component={RefDetail} options={{ title: 'Reference' }}/>
           </Stack.Navigator>
   );
 }

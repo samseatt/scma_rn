@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TouchableOpacity, TouchableHighlight, View } from 'react-native';
 import { SwipeListView } from 'react-native-swipe-list-view';
-// import { FlatList } from 'react-native';
-// import { ListItem, Avatar } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './LoadingComponent';
 import { tagBlue, tagOrange, highlight } from './Utils';
-// import * as Animatable from 'react-native-animatable';
-// import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 const mapStateToProps = state => {
     return {
@@ -25,11 +21,11 @@ const approveNote = (rowMap, rowKey) => {
     console.log('Approval Acknowledged');
 };
 
-const editRef = (item) => {
+const flagRef = (item) => {
     console.log('Edit Acknowledged ' + item.id);
 };
 
-const editNote = (item) => {
+const flagNote = (item) => {
     console.log('Edit Acknowledged ' + item.id);
 };
 
@@ -77,9 +73,9 @@ const renderHiddenRef = (data, rowMap) => (
         </TouchableOpacity>
         <TouchableOpacity
             style={[styles.backRightBtn, styles.backRightBtnMiddle]}
-            onPress={() => editRef(data.item)}
+            onPress={() => flagRef(data.item)}
         >
-            <Text style={styles.backTextWhite}>Edit</Text>
+            <Text style={styles.backTextWhite}>Flag</Text>
         </TouchableOpacity>
         <TouchableOpacity
             style={[styles.backRightBtn, styles.backRightBtnRight]}
@@ -100,9 +96,9 @@ const renderHiddenNote = (data, rowMap) => (
         </TouchableOpacity>
         <TouchableOpacity
             style={[styles.backRightBtn, styles.backRightBtnMiddle]}
-            onPress={() => editNote(data.item)}
+            onPress={() => flagNote(data.item)}
         >
-            <Text style={styles.backTextWhite}>Edit</Text>
+            <Text style={styles.backTextWhite}>Flag</Text>
         </TouchableOpacity>
         <TouchableOpacity
             style={[styles.backRightBtn, styles.backRightBtnRight]}
@@ -256,7 +252,7 @@ const styles = StyleSheet.create({
         right: 150,
     },
     backRightBtnMiddle: {
-        backgroundColor: '#336699',
+        backgroundColor: '#ff6600',
         // backgroundColor: '#6633cc',
         right: 75,
     },

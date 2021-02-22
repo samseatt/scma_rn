@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
-
 const NO_WIDTH_SPACE = '​';
 
 export const tagBlue = string => {

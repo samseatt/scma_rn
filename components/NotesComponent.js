@@ -20,7 +20,7 @@ const approveNote = (rowMap, rowKey) => {
     console.log('Approval Acknowledged');
 };
 
-const editNote = (item) => {
+const flagNote = (item) => {
     console.log('Edit Acknowledged ' + item.id);
 };
 
@@ -47,9 +47,9 @@ const renderHiddenNote = (data, rowMap) => (
         </TouchableOpacity>
         <TouchableOpacity
             style={[styles.backRightBtn, styles.backRightBtnMiddle]}
-            onPress={() => editNote(data.item)}
+            onPress={() => flagNote(data.item)}
         >
-            <Text style={styles.backTextWhite}>Edit</Text>
+            <Text style={styles.backTextWhite}>Flag</Text>
         </TouchableOpacity>
         <TouchableOpacity
             style={[styles.backRightBtn, styles.backRightBtnRight]}
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
         right: 150,
     },
     backRightBtnMiddle: {
-        backgroundColor: '#336699',
+        backgroundColor: '#ff6600',
         // backgroundColor: '#6633cc',
         right: 75,
     },

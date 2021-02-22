@@ -16,6 +16,9 @@ const mapStateToProps = state => {
     }
 }
 
+const deletePage = (item) => {
+    console.log('Delete Acknowledged ' + item.id);
+};
 
 const approvePage = (rowMap, rowKey) => {
     console.log('Approval Acknowledged');
@@ -165,7 +168,7 @@ const styles = StyleSheet.create({
         right: 150,
     },
     backRightBtnMiddle: {
-        backgroundColor: '#336699',
+        backgroundColor: '#ff6600',
         // backgroundColor: '#6633cc',
         right: 75,
     },

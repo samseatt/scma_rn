@@ -182,6 +182,164 @@ class PageDetail extends Component {
        });
     }
 
+    renderTitle(title, contentId) {
+
+        return(
+            <Card>
+                <Card.Title>Title</Card.Title>
+                <Card.Divider />
+                <Text style={{margin: 10}}>
+                    {title}
+                </Text>
+                <Card.Divider />
+                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                    <Icon
+                        raised
+                        reverse
+                        name={'trash'}
+                        type='font-awesome'
+                        color='#d14020'
+                        onPress={() => console.log('delete pressed')}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name={'flag'}
+                        type='font-awesome'
+                        color='#ff6600'
+                        onPress={() => console.log('flag pressed')}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name={'pencil'}
+                        type='font-awesome'
+                        color='#336699'
+                        // onPress={() => console.log('edit pressed')}
+                        onPress={() => this.inputTitle(contentId)}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name='check'
+                        type='font-awesome'
+                        color='#339966'
+                        style={styles.cardItem}
+                        onPress={() => console.log('share pressed')}
+                        />
+                </View>
+            </Card>
+        );
+    }
+
+    renderAbstract(abstracts, contentId) {
+
+        return(
+            <Card>
+                <Card.Title>Abstract</Card.Title>
+                <Card.Divider />
+                {abstracts.map(abs => {return (
+                    <View>
+                        <Text>{abs.text}</Text>
+                        <Text style={{margin: 10}}>
+                            {tagBlue('Author')} {abs.author}
+                        </Text>
+                        <Text style={{margin: 10}}>
+                            {tagBlue('Source')} {abs.source}
+                        </Text>
+                        <Card.Divider />
+                    </View>
+                )})}
+                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                    <Icon
+                        raised
+                        reverse
+                        name={'trash'}
+                        type='font-awesome'
+                        color='#d14020'
+                        onPress={() => console.log('delete pressed')}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name={'flag'}
+                        type='font-awesome'
+                        color='#ff6600'
+                        onPress={() => console.log('flag pressed')}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name={'pencil'}
+                        type='font-awesome'
+                        color='#999'
+                        // onPress={() => this.inputAbstract(contentId)}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name='check'
+                        type='font-awesome'
+                        color='#339966'
+                        style={styles.cardItem}
+                        onPress={() => console.log('share pressed')}
+                        />
+                </View>
+            </Card>
+        );
+    }
+
+    renderText(texts, contentId) {
+
+        return(
+            <Card>
+                <Card.Title>Text</Card.Title>
+                <Card.Divider />
+                {texts.map(txt => {return (
+                    <View>
+                        <Text>{txt}</Text>
+                        <Text></Text>
+                    </View>
+                )})}
+                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                    <Icon
+                        raised
+                        reverse
+                        name={'trash'}
+                        type='font-awesome'
+                        color='#d14020'
+                        onPress={() => console.log('delete pressed')}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name={'flag'}
+                        type='font-awesome'
+                        color='#ff6600'
+                        onPress={() => console.log('flag pressed')}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name={'pencil'}
+                        type='font-awesome'
+                        color='#999'
+                        // onPress={() => this.inputText(contentId)}
+                        />
+                    <Icon
+                        raised
+                        reverse
+                        name='check'
+                        type='font-awesome'
+                        color='#339966'
+                        style={styles.cardItem}
+                        onPress={() => console.log('approve pressed')}
+                        />
+                </View>
+            </Card>
+        );
+    }
+ 
     render() {
 
         const contentId = this.props.route.params.contentId;
@@ -226,7 +384,7 @@ class PageDetail extends Component {
                 </View>
             </TouchableHighlight>
         );
-        
+
         // console.log('navigate', navigate);
         // console.log('navigation', this.props.navigation);
 
@@ -253,50 +411,7 @@ class PageDetail extends Component {
         else {
             return (
                 <ScrollView style={styles.container}>
-                    <Card>
-                        <Card.Title>Title</Card.Title>
-                        <Card.Divider />
-                        <Text style={{margin: 10}}>
-                            {this.state.content.title}
-                        </Text>
-                        <Card.Divider />
-                        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                            <Icon
-                                raised
-                                reverse
-                                name={'trash'}
-                                type='font-awesome'
-                                color='#d14020'
-                                onPress={() => console.log('delete pressed')}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name={'flag'}
-                                type='font-awesome'
-                                color='#ff6600'
-                                onPress={() => console.log('flag pressed')}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name={'pencil'}
-                                type='font-awesome'
-                                color='#336699'
-                                // onPress={() => console.log('edit pressed')}
-                                onPress={() => this.inputTitle(contentId)}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name='check'
-                                type='font-awesome'
-                                color='#339966'
-                                style={styles.cardItem}
-                                onPress={() => console.log('share pressed')}
-                                />
-                        </View>
-                    </Card>
+                    {this.renderTitle(this.state.content.title, contentId)}
                     <Modal
                         animationType = {"slide"}
                         transparent = {false}
@@ -324,122 +439,8 @@ class PageDetail extends Component {
                                 />
                         </View>
                     </Modal>
-                    <Card>
-                        <Card.Title>Abstract</Card.Title>
-                        <Card.Divider />
-                        <Text style={{margin: 10}}>
-                            {this.state.content.abstract[0].text}
-                        </Text>
-                        <Text style={{margin: 10}}>
-                            {tagBlue('Author')} {this.state.content.abstract[0].author}
-                        </Text>
-                        <Text style={{margin: 10}}>
-                            {tagBlue('Source')} {this.state.content.abstract[0].source}
-                        </Text>
-                        <Card.Divider />
-                        <Text style={{margin: 10}}>
-                            {this.state.content.abstract[0].text}
-                        </Text>
-                        <Text style={{margin: 10}}>
-                            {tagBlue('Author')} {this.state.content.abstract[0].author}
-                        </Text>
-                        <Text style={{margin: 10}}>
-                            {tagBlue('Source')} {this.state.content.abstract[0].source}
-                        </Text>
-                        <Card.Divider />
-                        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                            <Icon
-                                raised
-                                reverse
-                                name={'trash'}
-                                type='font-awesome'
-                                color='#d14020'
-                                onPress={() => console.log('delete pressed')}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name={'flag'}
-                                type='font-awesome'
-                                color='#ff6600'
-                                onPress={() => console.log('flag pressed')}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name={'pencil'}
-                                type='font-awesome'
-                                color='#336699'
-                                // onPress={() => console.log('edit pressed')}
-                                // onPress={() => props.onPressEdit()}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name='check'
-                                type='font-awesome'
-                                color='#339966'
-                                style={styles.cardItem}
-                                onPress={() => console.log('share pressed')}
-                                />
-                        </View>
-                    </Card>
-                    <Card>
-                        <Card.Title>Text</Card.Title>
-                        <Card.Divider />
-                        <Text style={{margin: 10}}>
-                            {this.state.content.text[0]}
-                        </Text>
-                        <Text style={{margin: 10}}>
-                            {this.state.content.text[1]}
-                        </Text>
-                        <Text style={{margin: 10}}>
-                            {this.state.content.text[2]}
-                        </Text>
-                        <Text style={{margin: 10}}>
-                            {this.state.content.text[3]}
-                        </Text>
-                        <Text style={{margin: 10}}>
-                            {this.state.content.text[4]}
-                        </Text>
-                        <Card.Divider />
-                        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                            <Icon
-                                raised
-                                reverse
-                                name={'trash'}
-                                type='font-awesome'
-                                color='#d14020'
-                                onPress={() => console.log('delete pressed')}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name={'flag'}
-                                type='font-awesome'
-                                color='#ff6600'
-                                onPress={() => console.log('flag pressed')}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name={'pencil'}
-                                type='font-awesome'
-                                color='#336699'
-                                // onPress={() => console.log('edit pressed')}
-                                // onPress={() => props.onPressEdit()}
-                                />
-                            <Icon
-                                raised
-                                reverse
-                                name='check'
-                                type='font-awesome'
-                                color='#339966'
-                                style={styles.cardItem}
-                                onPress={() => console.log('approve pressed')}
-                                />
-                        </View>
-                    </Card>
+                    {this.renderAbstract(this.state.content.abstract, contentId)}
+                    {this.renderText(this.state.content.text, contentId)}
                     <View style={styles.switchContainer}>
                         <Text style={styles.switchContainer}>References on this Page</Text>
                     </View>

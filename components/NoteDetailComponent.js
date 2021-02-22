@@ -43,6 +43,14 @@ function RenderNote(props) {
                         <Icon
                             raised
                             reverse
+                            name={'flag'}
+                            type='font-awesome'
+                            color='#ff6600'
+                            onPress={() => console.log('flag pressed')}
+                            />
+                        <Icon
+                            raised
+                            reverse
                             name={'pencil'}
                             type='font-awesome'
                             color='#336699'
