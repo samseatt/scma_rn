@@ -1,0 +1,39 @@
+export const POSTS_LOADING = 'POSTS_LOADING';
+export const ADD_POSTS = 'ADD_POSTS';
+export const POSTS_FAILED = 'POSTS_FAILED';
+export const POST_POSTS = 'POST_POSTS';
+
+export const CONFIGS_LOADING = 'CONFIGS_LOADING';
+export const ADD_CONFIGS = 'ADD_CONFIGS';
+export const CONFIGS_FAILED = 'CONFIGS_FAILED';
+export const POST_CONFIGS = 'POST_CONFIGS';
+
+export const CATEGORIES_LOADING = 'CATEGORIES_LOADING';
+export const ADD_CATEGORIES = 'ADD_CATEGORIES';
+export const CATEGORIES_FAILED = 'CATEGORIES_FAILED';
+export const POST_CATEGORIES = 'POST_CATEGORIES';
+
+export const REFS_LOADING = 'REFS_LOADING';
+export const ADD_REFS = 'ADD_REFS';
+export const REFS_FAILED = 'REFS_FAILED';
+export const POST_REFS = 'POST_REFS';
+
+export const NOTES_LOADING = 'NOTES_LOADING';
+export const ADD_NOTES = 'ADD_NOTES';
+export const NOTES_FAILED = 'NOTES_FAILED';
+export const POST_NOTES = 'POST_NOTES';
+
+export const CONTENTS_LOADING = 'CONTENTS_LOADING';
+export const ADD_CONTENTS = 'ADD_CONTENTS';
+export const CONTENTS_FAILED = 'CONTENTS_FAILED';
+export const POST_CONTENTS = 'POST_CONTENTS';
+
+export const FEEDBACK_LOADING = 'FEEDBACK_LOADING';
+export const ADD_FEEDBACK = 'ADD_FEEDBACK';
+export const FEEDBACK_FAILED = 'FEEDBACK_FAILED';
+export const POST_FEEDBACK = 'POST_FEEDBACK';
+
+export const FLOW_LOADING = 'FLOW_LOADING';
+export const ADD_FLOW = 'ADD_FLOW';
+export const FLOW_FAILED = 'FLOW_FAILED';
+export const POST_FLOW = 'POST_FLOW';
